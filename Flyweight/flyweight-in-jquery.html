@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="">click me</a>
+    <div>hello</div>
+    <script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+    <script type="text/javascript">
+    jQuery.single = (function(o) {
+        var collection = jQuery([1]); // Fill with 1 item, to make sure length === 1
+        return function(element) {
+            // Give collection the element:
+            collection[0] = element;
+            // Return the collection:
+            return collection;
+        }; 
+    }());
+
+    jQuery('a').click(function(e) {
+    	console.log(event);
+    	e.preventDefault();
+        var html = jQuery.single(this).next().html(); // Method chaining works!
+        console.log(html);
+        // etc. etc.
+
+    });
+    </script>
+</body>
+
+</html>

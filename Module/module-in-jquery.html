@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>module in jquery</title>
+</head>
+
+<body>
+    <script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+    <script type="text/javascript">
+    function library(module) {
+    	console.log(module);
+        $(function() {
+            if (module.init) {
+                module.init();
+            }
+        });
+
+        return module;
+    }
+
+    var myLibrary = library(function() {
+        return {
+            init: function() {
+                // module implementation
+                console.log("init ok");
+            }
+        };
+    }());
+
+    console.log(myLibrary);
+    </script>
+</body>
+
+</html>
