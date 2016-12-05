@@ -11,7 +11,7 @@ class MacBook {
 
 function Memory(macbook) {
 
-    var v = macbook.cost();
+    let v = macbook.cost();
     macbook.cost = function() {
         return v + 75;
     };
@@ -21,7 +21,7 @@ function Memory(macbook) {
 // Decorator 2
 function Engraving(macbook) {
 
-    var v = macbook.cost();
+    let v = macbook.cost();
     macbook.cost = function() {
         return v + 200;
     };
@@ -31,14 +31,14 @@ function Engraving(macbook) {
 // Decorator 3
 function Insurance(macbook) {
 
-    var v = macbook.cost();
+    let v = macbook.cost();
     macbook.cost = function() {
         return v + 250;
     };
 
 }
 
-var mb = new MacBook();
+let mb = new MacBook();
 Memory(mb);
 Engraving(mb);
 Insurance(mb);
